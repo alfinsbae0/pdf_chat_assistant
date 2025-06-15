@@ -121,7 +121,7 @@ Based on this document content, please provide clear and helpful responses to us
       const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY
 
       if (!apiKey) {
-        throw new Error('API key tidak ditemukan. Pastikan REACT_APP_OPENROUTER_API_KEY sudah diset di file .env');
+        throw new Error('API key tidak ditemukan. Pastikan VITE_OPENROUTER_API_KEY sudah diset di file .env');
       }
 
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
