@@ -162,7 +162,7 @@ Based on this document content, please provide clear and helpful responses to us
 
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error calling OpenRouter:', error);
+      console.error('Error calling API:', error);
       const errorMessage: ChatMessage = {
         id: Date.now().toString(),
         role: 'assistant',
