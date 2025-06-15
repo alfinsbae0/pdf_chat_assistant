@@ -17,7 +17,6 @@ export function useChat() {
 
   const extractTextFromPDF = async (file: File): Promise<string> => {
     try {
-      // Import PDF.js secara dinamis
       const pdfjsLib = await import('pdfjs-dist');
 
       // Set worker path
@@ -28,7 +27,6 @@ export function useChat() {
 
       let fullText = '';
 
-      // Ekstrak teks dari setiap halaman
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const textContent = await page.getTextContent();
@@ -63,7 +61,6 @@ export function useChat() {
 
       setPdfContext(newPdfContext);
 
-      // Tambahkan pesan sistem untuk memberitahu user bahwa PDF berhasil diupload
       const systemMessage: ChatMessage = {
         id: Date.now().toString(),
         role: 'assistant',
@@ -118,8 +115,8 @@ ${pdfContext.content}
 Based on this document content, please provide clear and helpful responses to user questions in Indonesian language. Always reference the document when answering questions about its content. If asked about what PDF is open, mention the filename "${pdfContext.fileName}".`;
       }
 
-      const apiKey = import.meta.env.VITE_API_KEY;
-      consi apiUrl = import.meta.env.VITE_API_URL
+      const apiKey = import.meta.env.VITE_API_KEY
+      const apiUrl = import.meta.env.VITE_API_URL
 
       if (!apiKey) {
         throw new Error('API key tidak ditemukan. Pastikan VITE_API_KEY sudah diset di file .env');
