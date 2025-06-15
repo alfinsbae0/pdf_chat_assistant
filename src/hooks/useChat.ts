@@ -118,13 +118,14 @@ ${pdfContext.content}
 Based on this document content, please provide clear and helpful responses to user questions in Indonesian language. Always reference the document when answering questions about its content. If asked about what PDF is open, mention the filename "${pdfContext.fileName}".`;
       }
 
-      const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY
+      const apiKey = import.meta.env.VITE_API_KEY;
+      consi apiUrl = import.meta.env.VITE_API_URL
 
       if (!apiKey) {
-        throw new Error('API key tidak ditemukan. Pastikan VITE_OPENROUTER_API_KEY sudah diset di file .env');
+        throw new Error('API key tidak ditemukan. Pastikan VITE_API_KEY sudah diset di file .env');
       }
 
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${apiKey}`,
