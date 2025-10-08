@@ -131,7 +131,7 @@ Based on this document content, please provide clear and helpful responses to us
           'X-Title': 'PDF Chat App',
         },
         body: JSON.stringify({
-          model: 'deepseek/deepseek-chat-v3.1:free',
+          model: 'deepseek/deepseek-chat-v3-0324:free',
           messages: [
             {
               role: 'system',
