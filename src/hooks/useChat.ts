@@ -131,7 +131,7 @@ Based on this document content, please provide clear and helpful responses to us
           'X-Title': 'PDF Chat App',
         },
         body: JSON.stringify({
-          model: 'tngtech/deepseek-r1t2-chimera:free',
+          model: 'arcee-ai/trinity-large-preview:free',
           messages: [
             {
               role: 'system',
